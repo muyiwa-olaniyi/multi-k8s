@@ -18,7 +18,7 @@ after_success:
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
     # Take images and push them to docker hub
-    - docker push muyiwa-olaniyi/muyiwa-client
-    - docker push muyiwa-olaniyi/muyiwa-nginx
-    - docker push muyiwa-olaniyi/muyiwa-server
-    - docker push muyiwa-olaniyi/muyiwa-worker
+    - docker push muyiwa-olaniyi/multi-client
+    - docker push muyiwa-olaniyi/multi-nginx
+    - docker push muyiwa-olaniyi/multi-server
+    - docker push muyiwa-olaniyi/multi-worker
