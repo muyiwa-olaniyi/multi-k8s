@@ -6,7 +6,7 @@ services:
 before_install:
     - docker build -t molaniyi/react-test -f ./client/Dockerfile.dev ./client
 
-scritp:
+script:
     - docker run -e CI=true molaniyi/react-test npm test
 
 after_success:
