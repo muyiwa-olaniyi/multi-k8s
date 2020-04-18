@@ -4,21 +4,21 @@ services:
     - docker
 
 before_install:
-    - docker build -t muyiwa-olaniyi/react-test -f ./client/Dockerfile.dev ./client
+    - docker build -t molaniyi/react-test -f ./client/Dockerfile.dev ./client
 
 scritp:
-    - docker run -e CI=true muyiwa-olaniyi/react-test npm test
+    - docker run -e CI=true molaniyi/react-test npm test
 
 after_success:
-    - docker build -t muyiwa-olaniyi/multi-client ./client
-    - docker build -t muyiwa-olaniyi/multi-nginx ./nginx
-    - docker build -t muyiwa-olaniyi/multi-server ./server
-    - docker build -t muyiwa-olaniyi/multi-worker ./worker
+    - docker build -t molaniyi/multi-client ./client
+    - docker build -t molaniyi/multi-nginx ./nginx
+    - docker build -t molaniyi/multi-server ./server
+    - docker build -t molaniyi/multi-worker ./worker
     #Log in to the docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
     # Take images and push them to docker hub
-    - docker push muyiwa-olaniyi/multi-client
-    - docker push muyiwa-olaniyi/multi-nginx
-    - docker push muyiwa-olaniyi/multi-server
-    - docker push muyiwa-olaniyi/multi-worker
+    - docker push molaniyi/multi-client
+    - docker push molaniyi/multi-nginx
+    - docker push molaniyi/multi-server
+    - docker push molaniyi/multi-worker
