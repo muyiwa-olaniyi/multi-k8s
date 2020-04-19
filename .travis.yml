@@ -16,11 +16,8 @@ after_success:
     - docker build -t molaniyi/multi-worker ./worker
     #Log in to the docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-
-    # Take images and push them to docker hub
+    # Take those images and push them to docker hub
     - docker push molaniyi/multi-client
     - docker push molaniyi/multi-nginx
     - docker push molaniyi/multi-server
     - docker push molaniyi/multi-worker
-
-    # redundant line just to initiate git push for travis ci
