@@ -18,7 +18,6 @@
   "browserslist": {
     "production": [
       ">0.2%",
-      //"not dead", --> commented out bcos client image failed to be uploaded to docker hub
       "not op_mini all"
     ],
     "development": [
